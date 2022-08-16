@@ -10,24 +10,45 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerSelection) {
-
     if (playerChoice === "rock" && computerSelection === "scissors") {
-        return `You Win! ${playerChoice} beats ${computerSelection}`;
+        console.log(`You Win! ${playerChoice} beats ${computerSelection}`);
+        isWinner = true;
     } else if (playerChoice === "rock" && computerSelection === "rock") {
-        return `It's a Tie!`;
+        console.log(`It's a Tie!`);
+        isWinner = false;
     } else if (playerChoice === "paper" && computerSelection === "rock") {
-        return `You Win! ${playerChoice} beats ${computerSelection}`;
+        console.log(`You Win! ${playerChoice} beats ${computerSelection}`);
+        isWinner = true;
     } else if (playerChoice === "paper" && computerSelection === "paper") {
-        return `It's a Tie!`;
+        console.log(`It's a Tie!`);
+        isWinner = false;
     } else if (playerChoice === "scissors" && computerSelection === "paper") {
-        return `You Win! ${playerChoice} beats ${computerSelection}`;
+        console.log(`You Win! ${playerChoice} beats ${computerSelection}`);
+        isWinner = true;
     } else if (playerChoice === "scissors" && computerSelection === "scissors") {
-        return `It's a Tie!`;
+        console.log(`It's a Tie!`);
+        isWinner = false;
     } else {
-        return `You Lose! ${computerSelection} beats ${playerChoice}`;
+        console.log(`You Lose! ${computerSelection} beats ${playerChoice}`);
+        isWinner = false;
     }
+    return isWinner;
 }
 
-const playerChoice = "rock";
-let computerSelection = getComputerChoice();
-console.log(playRound(playerChoice, computerSelection));
+function game() {
+    let score = 0;
+
+    for (let i = 0; i < 5; i++) {
+          //get player input
+          playRound(playerChoice, getComputerChoice());
+            if (isWinner == true) {
+                score++;
+            }
+          console.log(score);
+        }
+}
+
+let isWinner;
+let playerChoice = "rock";
+
+console.log(game());
