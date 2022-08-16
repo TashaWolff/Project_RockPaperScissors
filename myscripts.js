@@ -10,23 +10,24 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerSelection) {
-    let result;
 
     if (playerChoice === "rock" && computerSelection === "scissors") {
-        result = "winner";
+        return `You Win! ${playerChoice} beats ${computerSelection}`;
     } else if (playerChoice === "rock" && computerSelection === "rock") {
-        result = "tie";
+        return `It's a Tie!`;
     } else if (playerChoice === "paper" && computerSelection === "rock") {
-        result = "winner";
+        return `You Win! ${playerChoice} beats ${computerSelection}`;
     } else if (playerChoice === "paper" && computerSelection === "paper") {
-        result = "tie";
+        return `It's a Tie!`;
     } else if (playerChoice === "scissors" && computerSelection === "paper") {
-        result = "winner";
+        return `You Win! ${playerChoice} beats ${computerSelection}`;
     } else if (playerChoice === "scissors" && computerSelection === "scissors") {
-        result = "tie";
+        return `It's a Tie!`;
     } else {
-        result = "lose";
+        return `You Lose! ${computerSelection} beats ${playerChoice}`;
     }
-
-    return giveMessage();
 }
+
+const playerChoice = "rock";
+let computerSelection = getComputerChoice();
+console.log(playRound(playerChoice, computerSelection));
