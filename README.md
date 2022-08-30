@@ -1,4 +1,4 @@
-# Project_RockPaperScissors
+# RockPaperScissors
 A simple game of rock, paper, scissors against the computer.
 
 Live demo link coming soon
