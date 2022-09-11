@@ -2,9 +2,25 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <script src="myscripts.js" defer></script>
         <title>Rock, Paper, Scissors Project</title>
     </head>
     <body>
-        <script src="myscripts.js"></script>
+        <!--start content-->
+        <div id="startContainer">
+            <h1 class="intro">A challenger approaches...</h1>
+            <img class="challengerStart" src="img.png" alt="A menacing cloaked challenger">
+            <button id="btn">Fight!</button>
+        </div>
+        <!--main game-->
+        <div id="gameContainer" style="display:none;">
+            <h1 id="gameTitle">Rock * Paper * Scissors</h1>
+            <p>The rest of the game UI...</p>
+        </div>
+        <!--end game-->
+        <div id="endContainer" style="display:none;">
+            <h1>This is the end of the game.</h1>
+            <p>there should be a button here. maybe a new one, maybe the starting one.</p>
+        </div>
     </body>
 </html>
