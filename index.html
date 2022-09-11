@@ -10,7 +10,7 @@
         <div id="startContainer">
             <h1 class="intro">A challenger approaches...</h1>
             <img class="challengerStart" src="img.png" alt="A menacing cloaked challenger">
-            <button id="btn">Fight!</button>
+            <button id="btnStart">Fight!</button>
         </div>
         <!--main game-->
         <div id="gameContainer" style="display:none;">
@@ -19,20 +19,20 @@
             <div class="playBox">
                 <h1>You</h1>
                 <p>score: </p>
-                <div class="choices">
-                    <button>rock</button>
-                    <button>paper</button>
-                    <button>scissors</button>
+                <div class="plyrChoices">
+                    <button id="rock" class="choice">rock</button>
+                    <button id="paper" class="choice">paper</button>
+                    <button id="scissors" class="choice">scissors</button>
                 </div>
             </div>
-            <h2>*Choose your hand*</h2>
+            <div id="results">*Choose your hand*</div>
             <div class="playBox">
                 <h1>Challenger</h1>
-                <p>score: </p>
-                <div class="choices">
-                    <button>rock</button>
-                    <button>paper</button>
-                    <button>scissors</button>
+                <p class="compScore">score: </p>
+                <div class="compChoices">
+                    <div class="rock">rock</div>
+                    <div class="paper">paper</div>
+                    <div class="scissors">scissors</div>
                 </div>
             </div>
             <img src="img.png" alt="menacing challengers cloaked head">
