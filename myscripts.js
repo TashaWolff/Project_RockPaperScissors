@@ -72,10 +72,20 @@ choice.forEach((selection) => {
     selection.addEventListener('click', () => {
         playRound(selection.id, getComputerChoice());
         console.log(plyrScore, compScore);
-        if (plyrScore === 5) {
+        if ((plyrScore === 5) || (compScore === 5)) {
             alert('you win!');
-        } else if (compScore === 5) {
-            alert('you lose );');
+            //gameOver();
         }
     });
 });
+
+//function gameOver() {
+//  make main game invisible
+//  reset game board (scores, etc)
+//  make end container visible  
+//  change text contents of h1 based on if winner or not
+//}
+
+//function end () {
+//  accept fate -> return to start screen
+//}
