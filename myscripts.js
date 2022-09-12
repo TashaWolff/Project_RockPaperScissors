@@ -13,27 +13,24 @@ function getComputerChoice() {
 function playRound(playerChoice, computerSelection) {    
     if (playerChoice === "rock" && computerSelection === "scissors") {
         results.textContent = `You Win! ${playerChoice} beats ${computerSelection}`;
-        isWinner = true;
+        plyrScore++;
     } else if (playerChoice === "rock" && computerSelection === "rock") {
         results.textContent = `It's a Tie!`;
-        isWinner = false;
     } else if (playerChoice === "paper" && computerSelection === "rock") {
         results.textContent = `You Win! ${playerChoice} beats ${computerSelection}`;
-        isWinner = true;
+        plyrScore++;
     } else if (playerChoice === "paper" && computerSelection === "paper") {
         results.textContent = `It's a Tie!`;
-        isWinner = false;
     } else if (playerChoice === "scissors" && computerSelection === "paper") {
         results.textContent = `You Win! ${playerChoice} beats ${computerSelection}`;
-        isWinner = true;
+        plyrScore++;
     } else if (playerChoice === "scissors" && computerSelection === "scissors") {
         results.textContent = `It's a Tie!`;
-        isWinner = false;
     } else {
         results.textContent = `You Lose! ${computerSelection} beats ${playerChoice}`;
-        isWinner = false;
+        compScore++;
     }
-    return isWinner;
+    // return isWinner;
 }
 
 // function game(choice) {
@@ -57,6 +54,9 @@ const startContainer = document.querySelector("#startContainer");
 const gameContainer = document.querySelector("#gameContainer");
 const endContainer = document.querySelector("#endContainer");
 const results = document.querySelector("#results");
+let plyrScore = 0;
+let compScore = 0;
+
 
 btnStart.addEventListener('click', start);
 
@@ -70,7 +70,12 @@ const choice = document.querySelectorAll('.choice');
 
 choice.forEach((selection) => {
     selection.addEventListener('click', () => {
-        //game(selection.id);
         playRound(selection.id, getComputerChoice());
+        console.log(plyrScore, compScore);
+        if (plyrScore === 5) {
+            alert('you win!');
+        } else if (compScore === 5) {
+            alert('you lose );');
+        }
     });
 });
