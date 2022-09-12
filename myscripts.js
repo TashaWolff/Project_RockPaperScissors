@@ -30,62 +30,64 @@ function playRound(playerChoice, computerSelection) {
         results.textContent = `You Lose! ${computerSelection} beats ${playerChoice}`;
         compScore++;
     }
-    // return isWinner;
 }
-
-// function game(choice) {
-//     let score = 0;
-
-//     for (let i = 0; i < 5; i++) {
-//           playRound(choice, getComputerChoice());
-//             if (isWinner == true) {
-//                 score++;
-//             }
-//           console.log(score);
-//         }
-
-//     return console.log(`Your final score is ${score}.`)
-// }
-// console.log(game());
 
 //UI functionality
 const btnStart = document.querySelector("#btnStart");
+const btnEnd = document.querySelector("#btnEnd")
 const startContainer = document.querySelector("#startContainer");
 const gameContainer = document.querySelector("#gameContainer");
 const endContainer = document.querySelector("#endContainer");
 const results = document.querySelector("#results");
+
+//initialize game
 let plyrScore = 0;
 let compScore = 0;
+gameContainer.style.display="none";
+endContainer.style.display="none";
 
-
-btnStart.addEventListener('click', start);
+btnStart.addEventListener("click", start);
+btnEnd.addEventListener("click", end);
 
 function start() {
     gameContainer.style.display="block";
-    startContainer.style.display='none';
+    startContainer.style.display="none";
 }
 
-//game UI
+function end() {
+//  accept fate -> return to start screen
+    endContainer.style.display="none";
+    startContainer.style.display="block";
+}
+
 const choice = document.querySelectorAll('.choice');
 
 choice.forEach((selection) => {
     selection.addEventListener('click', () => {
         playRound(selection.id, getComputerChoice());
         console.log(plyrScore, compScore);
-        if ((plyrScore === 5) || (compScore === 5)) {
-            alert('you win!');
-            //gameOver();
+        if (plyrScore === 5) {
+            gameOver(true);
+        } else if (compScore === 5) {
+            gameOver(false);
         }
     });
 });
 
-//function gameOver() {
-//  make main game invisible
-//  reset game board (scores, etc)
-//  make end container visible  
-//  change text contents of h1 based on if winner or not
-//}
+const endResult = document.querySelector("#endContainer h1")
 
-//function end () {
-//  accept fate -> return to start screen
-//}
+function gameOver(isWinner) {
+    gameContainer.style.display="none";
+    endContainer.style.display="block"
+    plyrScore = 0;
+    compScore = 0;
+    if (isWinner) {
+        endResult.textContent = "Winner!"
+    } else {
+        endResult.textContent = "Loser..."
+    }
+}
+
+
+//ADD AUDIO SO STEVE SOUNDS INJURED WHENEVER YOU LOSE A ROUND
+//AUDIO FOR WINNING?
