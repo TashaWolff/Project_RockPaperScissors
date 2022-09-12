@@ -12,35 +12,35 @@ function getComputerChoice() {
 
 function playRound(playerChoice, computerSelection) {    
     if (playerChoice === "rock" && computerSelection === "scissors") {
-        alert(`You Win! ${playerChoice} beats ${computerSelection}`);
+        results.textContent = `You Win! ${playerChoice} beats ${computerSelection}`;
         isWinner = true;
     } else if (playerChoice === "rock" && computerSelection === "rock") {
-        alert(`It's a Tie!`);
+        results.textContent = `It's a Tie!`;
         isWinner = false;
     } else if (playerChoice === "paper" && computerSelection === "rock") {
-        alert(`You Win! ${playerChoice} beats ${computerSelection}`);
+        results.textContent = `You Win! ${playerChoice} beats ${computerSelection}`;
         isWinner = true;
     } else if (playerChoice === "paper" && computerSelection === "paper") {
-        alert(`It's a Tie!`);
+        results.textContent = `It's a Tie!`;
         isWinner = false;
     } else if (playerChoice === "scissors" && computerSelection === "paper") {
-        alert(`You Win! ${playerChoice} beats ${computerSelection}`);
+        results.textContent = `You Win! ${playerChoice} beats ${computerSelection}`;
         isWinner = true;
     } else if (playerChoice === "scissors" && computerSelection === "scissors") {
-        alert(`It's a Tie!`);
+        results.textContent = `It's a Tie!`;
         isWinner = false;
     } else {
-        alert(`You Lose! ${computerSelection} beats ${playerChoice}`);
+        results.textContent = `You Lose! ${computerSelection} beats ${playerChoice}`;
         isWinner = false;
     }
     return isWinner;
 }
 
-// function game() {
+// function game(choice) {
 //     let score = 0;
 
 //     for (let i = 0; i < 5; i++) {
-//           playRound(getPlayerChoice(), getComputerChoice());
+//           playRound(choice, getComputerChoice());
 //             if (isWinner == true) {
 //                 score++;
 //             }
@@ -56,6 +56,7 @@ const btnStart = document.querySelector("#btnStart");
 const startContainer = document.querySelector("#startContainer");
 const gameContainer = document.querySelector("#gameContainer");
 const endContainer = document.querySelector("#endContainer");
+const results = document.querySelector("#results");
 
 btnStart.addEventListener('click', start);
 
@@ -69,6 +70,7 @@ const choice = document.querySelectorAll('.choice');
 
 choice.forEach((selection) => {
     selection.addEventListener('click', () => {
+        //game(selection.id);
         playRound(selection.id, getComputerChoice());
     });
 });
