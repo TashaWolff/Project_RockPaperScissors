@@ -1,0 +1,22 @@
+body,
+button {
+    background-color: black;
+    color: white;
+    font-family: 'Secular One', sans-serif;
+}
+
+#startContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#startContainer img {
+    width: 420px;
+    height: auto;
+}
+
+#btnStart {
+    width: 72px;
+    margin-top: 36px;
+}

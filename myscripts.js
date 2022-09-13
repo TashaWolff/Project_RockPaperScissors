@@ -57,7 +57,7 @@ function start() {
 function end() {
 //  accept fate -> return to start screen
     endContainer.style.display="none";
-    startContainer.style.display="block";
+    startContainer.style.display="flex";
 }
 
 const choice = document.querySelectorAll('.choice');
