@@ -50,7 +50,7 @@ btnStart.addEventListener("click", start);
 btnEnd.addEventListener("click", end);
 
 function start() {
-    gameContainer.style.display="block";
+    gameContainer.style.display="flex";
     startContainer.style.display="none";
 }
 
@@ -78,7 +78,7 @@ const endResult = document.querySelector("#endContainer h1")
 
 function gameOver(isWinner) {
     gameContainer.style.display="none";
-    endContainer.style.display="block"
+    endContainer.style.display="flex"
     plyrScore = 0;
     compScore = 0;
     if (isWinner) {
@@ -87,7 +87,3 @@ function gameOver(isWinner) {
         endResult.textContent = "Loser..."
     }
 }
-
-
-//ADD AUDIO SO STEVE SOUNDS INJURED WHENEVER YOU LOSE A ROUND
-//AUDIO FOR WINNING?
