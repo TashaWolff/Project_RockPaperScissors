@@ -10,6 +10,13 @@ button {
     font-family: 'Secular One', sans-serif;
 }
 
+button {
+    width: auto;
+    border-radius: 8px;
+    padding: 1px 10px;
+    border: 2px solid rgba(255, 255, 255, 0.664);
+}
+
 #startContainer {
     display: flex;
     flex-direction: column;
@@ -19,12 +26,7 @@ button {
 #startContainer img {
     width: 420px;
     height: auto;
-    margin-top: -36px;
-}
-
-#btnStart {
-    width: 72px;
-    margin-top: 36px;
+    margin: -36px 0 36px 0;
 }
 
 #endContainer {
@@ -36,8 +38,4 @@ button {
 
 #gameContainer img {
     width: 420px;
-}
-
-#btnEnd {
-    width: 72px;
 }
