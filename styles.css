@@ -56,6 +56,15 @@ button {
     align-items: center;
     justify-content: space-around;
 }
+/* make border and text invisible - place img as background */
+
+#rock,
+#paper,
+#scissors {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
 
 .plyr {
     font-size: 26px;
@@ -63,7 +72,7 @@ button {
     margin-bottom: -36px;
 }
 
-#gameContainer img {
+.figure {
     width: 340px;
     align-self: flex-end;
     margin-right: 164px;
