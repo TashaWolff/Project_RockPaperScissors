@@ -30,6 +30,7 @@ function playRound(playerChoice, computerSelection) {
         results.textContent = `You Lose! ${computerSelection} beats ${playerChoice}`;
         compScore++;
     }
+    displayScore();
 }
 
 //UI functionality
@@ -39,6 +40,8 @@ const startContainer = document.querySelector("#startContainer");
 const gameContainer = document.querySelector("#gameContainer");
 const endContainer = document.querySelector("#endContainer");
 const results = document.querySelector("#results");
+const pScore = document.querySelector(".plyrScore");
+const cScore = document.querySelector(".compScore");
 
 //initialize game
 let plyrScore = 0;
@@ -81,9 +84,15 @@ function gameOver(isWinner) {
     endContainer.style.display="flex"
     plyrScore = 0;
     compScore = 0;
+    displayScore();
     if (isWinner) {
         endResult.textContent = "Winner!"
     } else {
         endResult.textContent = "Loser..."
     }
+}
+
+function displayScore() {
+    pScore.textContent = "score: " + plyrScore;
+    cScore.textContent = "score: " + compScore;
 }
