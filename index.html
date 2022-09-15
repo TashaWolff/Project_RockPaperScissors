@@ -10,13 +10,11 @@
         <title>Rock, Paper, Scissors Project</title>
     </head>
     <body>
-        <!--start content-->
         <div id="startContainer">
             <h1 class="intro">A challenger approaches</h1>
             <img src="./img/fullFigure.png" alt="A menacing cloaked challenger">
             <button id="btnStart">Fight!</button>
         </div>
-        <!--main game-->
         <div id="gameContainer">
             <h1 id="gameTitle">Rock * Paper * Scissors</h1>
             <div class="five">-First to 5 wins-</div>
@@ -24,24 +22,21 @@
                 <div class="plyr">You</div>
                 <div class="plyrScore">score: </div>
                 <div class="plyrChoices">
-                    <img id="rock" class="choice" src="./img/rock.png">
-                    <img id="paper" class="choice" src="./img/paper.png">
-                    <img id="scissors" class="choice" src="./img/scissors.png">
+                    <img id="rock" class="choice" src="./img/rock.png" alt="A poorly drawn rock">
+                    <img id="paper" class="choice" src="./img/paper.png" alt="A poorly drawn paper">
+                    <img id="scissors" class="choice" src="./img/scissors.png" alt="A poorly drawn pair of scissors">
                 </div>
             </div>
             <div id="results">*Choose your hand*</div>
             <div class="playBox">
                 <div class="plyr">Challenger</div>
                 <div class="compScore">score: </div>
-                <!--ADD IMAGE FOR COMP CHOICE-->
-                <!--MAKE DIV EMPTY AND DISPLAY WHICH PIC BASED ON WHAT COMP CHOICE IS - MAYBE INSIDE COMPCHOICE()-->
                 <div class="compBox">
                     <div class="compChoice"></div>
                 </div>
             </div>
             <img class="figure" src="./img/halfFigure.png" alt="menacing challengers cloaked head">
         </div>
-        <!--end game-->
         <div id="endContainer">
             <h1>This is the end of the game.</h1>
             <button id="btnEnd">Accept fate</button>

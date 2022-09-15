@@ -34,6 +34,26 @@ function playRound(playerChoice, computerSelection) {
     displayScore();
 }
 
+function gameOver(isWinner) {
+    gameContainer.style.display="none";
+    endContainer.style.display="flex";
+    results.textContent = "*Chose your hand*";
+    plyrScore = 0;
+    compScore = 0;
+    displayScore();
+    if (isWinner) {
+        endResult.textContent = "Winner!";
+    } else {
+        endResult.textContent = "Loser...";
+    }
+}
+
+function displayScore() {
+    pScore.textContent = "score: " + plyrScore;
+    cScore.textContent = "score: " + compScore;
+}
+
+
 //UI functionality
 const btnStart = document.querySelector("#btnStart");
 const btnEnd = document.querySelector("#btnEnd");
@@ -44,6 +64,7 @@ const results = document.querySelector("#results");
 const pScore = document.querySelector(".plyrScore");
 const cScore = document.querySelector(".compScore");
 const compChoice = document.querySelector(".compChoice");
+const endResult = document.querySelector("#endContainer h1");
 
 //initialize game
 let plyrScore = 0;
@@ -84,32 +105,11 @@ choice.forEach((selection) => {
 //hover effect
 choice.forEach((selection) => {
     selection.addEventListener('mouseover', function (e) {
-        e.target.style.height = "100px";
-        e.target.style.width = "100px";
-    });
-    selection.addEventListener('mouseout', function (e) {
         e.target.style.height = "50px";
         e.target.style.width = "50px";
     });
+    selection.addEventListener('mouseout', function (e) {
+        e.target.style.height = "80px";
+        e.target.style.width = "80px";
+    });
 });
-
-const endResult = document.querySelector("#endContainer h1");
-
-function gameOver(isWinner) {
-    gameContainer.style.display="none";
-    endContainer.style.display="flex";
-    results.textContent = "*Chose your hand*";
-    plyrScore = 0;
-    compScore = 0;
-    displayScore();
-    if (isWinner) {
-        endResult.textContent = "Winner!";
-    } else {
-        endResult.textContent = "Loser...";
-    }
-}
-
-function displayScore() {
-    pScore.textContent = "score: " + plyrScore;
-    cScore.textContent = "score: " + compScore;
-}
