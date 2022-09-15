@@ -1,6 +1,6 @@
 # RockPaperScissors
 A simple game of rock, paper, scissors against the computer.
 
-Live demo link coming soon
+<a href="https://tashawolff.github.io/TOPLandingPage/">Live Demo!</a>
 
-The Odin Project links coming soon
+From <a href="https://www.theodinproject.com/">The Odin Project</a>.
