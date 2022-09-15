@@ -67,8 +67,8 @@ button {
 #rock,
 #paper,
 #scissors {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
 }
 
 .plyr {

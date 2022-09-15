@@ -11,7 +11,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerSelection) {    
-    compChoice.innerHTML = `<img id="rock" src="./img/${computerSelection}.png">`;
+    compChoice.innerHTML = `<img id="rock" src="./img/${computerSelection}.png" alt="${computerSelection}">`;
     if (playerChoice === "rock" && computerSelection === "scissors") {
         results.textContent = `You Win! ${playerChoice} beats ${computerSelection}`;
         plyrScore++;
@@ -105,11 +105,11 @@ choice.forEach((selection) => {
 //hover effect
 choice.forEach((selection) => {
     selection.addEventListener('mouseover', function (e) {
-        e.target.style.height = "50px";
-        e.target.style.width = "50px";
-    });
-    selection.addEventListener('mouseout', function (e) {
         e.target.style.height = "80px";
         e.target.style.width = "80px";
+    });
+    selection.addEventListener('mouseout', function (e) {
+        e.target.style.height = "70px";
+        e.target.style.width = "70px";
     });
 });
