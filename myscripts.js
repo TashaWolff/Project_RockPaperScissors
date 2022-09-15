@@ -2,11 +2,11 @@
 function getComputerChoice() {
     let choice = Math.random() * 100;
     if (choice > 0 && choice < 33) {
-        return "rock"
+        return "rock";
     } else if (choice >= 33 && choice < 66) {
-        return "paper"
+        return "paper";
     } else {
-        return "scissors"
+        return "scissors";
     }
 }
 
@@ -35,7 +35,7 @@ function playRound(playerChoice, computerSelection) {
 
 //UI functionality
 const btnStart = document.querySelector("#btnStart");
-const btnEnd = document.querySelector("#btnEnd")
+const btnEnd = document.querySelector("#btnEnd");
 const startContainer = document.querySelector("#startContainer");
 const gameContainer = document.querySelector("#gameContainer");
 const endContainer = document.querySelector("#endContainer");
@@ -77,18 +77,19 @@ choice.forEach((selection) => {
     });
 });
 
-const endResult = document.querySelector("#endContainer h1")
+const endResult = document.querySelector("#endContainer h1");
 
 function gameOver(isWinner) {
     gameContainer.style.display="none";
-    endContainer.style.display="flex"
+    endContainer.style.display="flex";
+    results.textContent = "*Chose your hand*";
     plyrScore = 0;
     compScore = 0;
     displayScore();
     if (isWinner) {
-        endResult.textContent = "Winner!"
+        endResult.textContent = "Winner!";
     } else {
-        endResult.textContent = "Loser..."
+        endResult.textContent = "Loser...";
     }
 }
 
