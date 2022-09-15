@@ -57,12 +57,18 @@ button {
     justify-content: space-around;
 }
 
+.plyrChoices {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 264px;
+}
+
 #rock,
 #paper,
 #scissors {
     width: 50px;
     height: 50px;
-    margin-left: 25px;
 }
 
 .plyr {

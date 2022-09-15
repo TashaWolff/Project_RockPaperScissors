@@ -63,6 +63,7 @@ function end() {
     startContainer.style.display="flex";
 }
 
+// game buttons
 const choice = document.querySelectorAll('.choice');
 
 choice.forEach((selection) => {
@@ -74,6 +75,18 @@ choice.forEach((selection) => {
         } else if (compScore === 5) {
             gameOver(false);
         }
+    });
+});
+
+//hover effect
+choice.forEach((selection) => {
+    selection.addEventListener('mouseover', function (e) {
+        e.target.style.height = "100px";
+        e.target.style.width = "100px";
+    });
+    selection.addEventListener('mouseout', function (e) {
+        e.target.style.height = "50px";
+        e.target.style.width = "50px";
     });
 });
 
