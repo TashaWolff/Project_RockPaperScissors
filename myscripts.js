@@ -11,6 +11,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerSelection) {    
+    compChoice.innerHTML = `<img id="rock" src="./img/${computerSelection}.png">`;
     if (playerChoice === "rock" && computerSelection === "scissors") {
         results.textContent = `You Win! ${playerChoice} beats ${computerSelection}`;
         plyrScore++;
@@ -42,6 +43,7 @@ const endContainer = document.querySelector("#endContainer");
 const results = document.querySelector("#results");
 const pScore = document.querySelector(".plyrScore");
 const cScore = document.querySelector(".compScore");
+const compChoice = document.querySelector(".compChoice");
 
 //initialize game
 let plyrScore = 0;
@@ -55,12 +57,14 @@ btnEnd.addEventListener("click", end);
 function start() {
     gameContainer.style.display="flex";
     startContainer.style.display="none";
+    displayScore();
 }
 
 function end() {
 //  accept fate -> return to start screen
     endContainer.style.display="none";
     startContainer.style.display="flex";
+    btnStart.textContent = "FIGHT AGAIN!"
 }
 
 // game buttons
@@ -69,7 +73,6 @@ const choice = document.querySelectorAll('.choice');
 choice.forEach((selection) => {
     selection.addEventListener('click', () => {
         playRound(selection.id, getComputerChoice());
-        console.log(plyrScore, compScore);
         if (plyrScore === 5) {
             gameOver(true);
         } else if (compScore === 5) {
