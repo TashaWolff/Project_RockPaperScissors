@@ -85,7 +85,8 @@ function end() {
 //  accept fate -> return to start screen
     endContainer.style.display="none";
     startContainer.style.display="flex";
-    btnStart.textContent = "FIGHT AGAIN!"
+    btnStart.textContent = "FIGHT AGAIN!";
+    compChoice.innerHTML = " ";
 }
 
 // game buttons
